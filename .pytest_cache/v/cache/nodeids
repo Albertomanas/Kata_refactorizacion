@@ -1,0 +1,17 @@
+[
+  "python/test_yatzy.py::test_chance_scores_sum_of_all_dice",
+  "python/test_yatzy.py::test_yatzy_scores_50",
+  "python/test_yatzy.py::test_1s",
+  "python/test_yatzy.py::test_2s",
+  "python/test_yatzy.py::test_threes",
+  "python/test_yatzy.py::test_fours_test",
+  "python/test_yatzy.py::test_fives",
+  "python/test_yatzy.py::test_sixes_test",
+  "python/test_yatzy.py::test_one_pair",
+  "python/test_yatzy.py::test_two_Pair",
+  "python/test_yatzy.py::test_three_of_a_kind",
+  "python/test_yatzy.py::test_four_of_a_knd",
+  "python/test_yatzy.py::test_smallStraight",
+  "python/test_yatzy.py::test_largeStraight",
+  "python/test_yatzy.py::test_fullHouse"
+]

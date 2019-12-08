@@ -19,7 +19,7 @@ class Yatzy:
     @staticmethod
     def ones(*dices):
         total = 0
-        value = 1
+        ONE = 1
         for dice in dices:
             if dice == value:
                 total += dice
@@ -28,26 +28,20 @@ class Yatzy:
     @staticmethod
     def twos(*dices):
         total = 0
-        value = 2
+        TWO = 2
         for dice in dices:
-            if dice == value:
+            if dice == TWO:
                 total += dice
         return total
 
     @staticmethod
-    def threes(d1,  d2,  d3,  d4,  d5):
-        s = 0
-        if (d1 == 3):
-            s += 3
-        if (d2 == 3):
-            s += 3
-        if (d3 == 3):
-            s += 3
-        if (d4 == 3):
-            s += 3
-        if (d5 == 3):
-            s += 3
-        return s
+    def threes(*dices):
+        total = 0
+        THREE = 3
+        for dice in dices:
+            if dice == THREE:
+                total += dice
+        return total
 
     def __init__(self, d1, d2, d3, d4, _5):
         self.dice = [0]*5
