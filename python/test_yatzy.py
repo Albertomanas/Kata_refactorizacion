@@ -61,6 +61,7 @@ def test_one_pair():
     assert 10 == Yatzy.score_pair(5, 3, 3, 3, 5)
     assert 12 == Yatzy.score_pair(5, 3, 6, 6, 5)
     assert 200 == Yatzy.score_pair(5, 3, 6, 6, 100, 100, 100)
+    assert 0 == Yatzy.score_pair(3, 4, 2, 5, 6)
 
 
 def test_two_Pair():

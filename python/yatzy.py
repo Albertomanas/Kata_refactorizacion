@@ -81,7 +81,7 @@ class Yatzy:
         for dice in dices:
             if dices.count(dice) > 1:
                 lista.append(dice)
-        
+
         if lista == []:
             return 0
         else:
