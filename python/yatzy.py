@@ -1,10 +1,10 @@
 class Yatzy:
 
     @staticmethod
-    def chance(*dados):
+    def chance(*dices):
         total = 0
-        for dado in dados:
-            total += dado
+        for dice in dices:
+            total += dice
         return total
 
     @staticmethod
@@ -17,28 +17,22 @@ class Yatzy:
         return 50
 
     @staticmethod
-    def ones(*dados):
-        sum = 0
+    def ones(*dices):
+        total = 0
         value = 1
-        for dado in dados:
-            if dado == value:
-                sum += dado
-        return sum
+        for dice in dices:
+            if dice == value:
+                total += dice
+        return total
 
     @staticmethod
-    def twos(d1,  d2,  d3,  d4,  d5):
-        sum = 0
-        if (d1 == 2):
-            sum += 2
-        if (d2 == 2):
-            sum += 2
-        if (d3 == 2):
-            sum += 2
-        if (d4 == 2):
-            sum += 2
-        if (d5 == 2):
-            sum += 2
-        return sum
+    def twos(*dices):
+        total = 0
+        value = 2
+        for dice in dices:
+            if dice == value:
+                total += dice
+        return total
 
     @staticmethod
     def threes(d1,  d2,  d3,  d4,  d5):
