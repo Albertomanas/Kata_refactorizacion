@@ -80,13 +80,16 @@ class Yatzy:
         lista = []
         for dice in dices:
             if dices.count(dice) > 1:
-                lista.append(dice)
+                if lista.count(dice) == 0:
+                    lista.append(dice)
+                else:
+                    continue
 
         if lista == []:
             return 0
         else:
             lista.sort()    
-            return lista[-1]*2
+            return lista[-1] * 2
 
     @staticmethod
     def two_pair(d1,  d2,  d3,  d4,  d5):
