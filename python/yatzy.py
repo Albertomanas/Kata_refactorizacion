@@ -43,13 +43,13 @@ class Yatzy:
                 total += dice
         return total
 
-    def __init__(self, d1, d2, d3, d4, _5):
-        self.dice = [0]*5
-        self.dice[0] = d1
-        self.dice[1] = d2
-        self.dice[2] = d3
-        self.dice[3] = d4
-        self.dice[4] = _5
+    def __init__(self, *dices):
+        self.dices = [0]*5
+        self.dices[0] = d1
+        self.dices[1] = d2
+        self.dices[2] = d3
+        self.dices[3] = d4
+        self.dices[4] = d5
 
     def fours(*dices):
         total = 0
@@ -88,28 +88,22 @@ class Yatzy:
         if lista == []:
             return 0
         else:
-            lista.sort()    
+            lista.sort()
             return lista[-1] * 2
 
     @staticmethod
-    def two_pair(d1,  d2,  d3,  d4,  d5):
-        counts = [0]*6
-        counts[d1-1] += 1
-        counts[d2-1] += 1
-        counts[d3-1] += 1
-        counts[d4-1] += 1
-        counts[d5-1] += 1
-        n = 0
+    def two_pair(*dices):
+        pairs = 0
         score = 0
-        for i in range(6):
-            if (counts[6-i-1] >= 2):
-                n = n+1
-                score += (6-i)
-
-        if (n == 2):
-            return score * 2
-        else:
-            return 0
+        number = 1
+        while pairs <= 2 and number <= (len(dices) + 1):
+            if dices.count(number) >= 2:
+                pairs += 1
+                score += 2 * number
+            number += 1
+            if pairs == 2:
+                return score
+        return 0
 
     @staticmethod
     def four_of_a_kind(_1,  _2,  d3,  d4,  d5):
