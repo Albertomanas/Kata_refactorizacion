@@ -1,5 +1,8 @@
 class Yatzy:
 
+    def __init__(self, *dices):
+        self.dices = list(dices)
+
     @staticmethod
     def chance(*dices):
         total = 0
@@ -42,14 +45,6 @@ class Yatzy:
             if dice == THREE:
                 total += dice
         return total
-
-    def __init__(self, *dices):
-        self.dices = [0]*5
-        self.dices[0] = d1
-        self.dices[1] = d2
-        self.dices[2] = d3
-        self.dices[3] = d4
-        self.dices[4] = d5
 
     def fours(*dices):
         total = 0
@@ -106,6 +101,14 @@ class Yatzy:
         return 0
 
     @staticmethod
+    def three_of_a_kind(*dices):
+        THREE = 3
+        for num in range(6, 0, -1):
+            if dices.count(num) >= THREE:
+                return THREE * num
+        return 0
+
+    @staticmethod
     def four_of_a_kind(_1,  _2,  d3,  d4,  d5):
         tallies = [0]*6
         tallies[_1-1] += 1
@@ -116,19 +119,6 @@ class Yatzy:
         for i in range(6):
             if (tallies[i] >= 4):
                 return (i+1) * 4
-        return 0
-
-    @staticmethod
-    def three_of_a_kind(d1,  d2,  d3,  d4,  d5):
-        t = [0]*6
-        t[d1-1] += 1
-        t[d2-1] += 1
-        t[d3-1] += 1
-        t[d4-1] += 1
-        t[d5-1] += 1
-        for i in range(6):
-            if (t[i] >= 3):
-                return (i+1) * 3
         return 0
 
     @staticmethod
