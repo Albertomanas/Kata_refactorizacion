@@ -84,17 +84,17 @@ def test_four_of_a_knd():
 
 
 def test_small_straight():
-    assert 15 == Yatzy.smallStraight(1, 2, 3, 4, 5)
-    assert 15 == Yatzy.smallStraight(2, 3, 4, 5, 1)
-    assert 0 == Yatzy.smallStraight(1, 2, 2, 4, 5)
+    assert 15 == Yatzy.small_straight(1, 2, 3, 4, 5)
+    assert 15 == Yatzy.small_straight(2, 3, 4, 5, 1)
+    assert 0 == Yatzy.small_straight(1, 2, 2, 4, 5)
 
 
 def test_large_straight():
-    assert 20 == Yatzy.largeStraight(6, 2, 3, 4, 5)
-    assert 20 == Yatzy.largeStraight(2, 3, 4, 5, 6)
-    assert 0 == Yatzy.largeStraight(1, 2, 2, 4, 5)
+    assert 20 == Yatzy.large_straight(6, 2, 3, 4, 5)
+    assert 20 == Yatzy.large_straight(2, 3, 4, 5, 6)
+    assert 0 == Yatzy.large_straight(1, 2, 2, 4, 5)
 
 
 def test_full_house():
-    assert 18 == Yatzy.fullHouse(6, 2, 2, 2, 6)
-    assert 0 == Yatzy.fullHouse(2, 3, 4, 5, 6)
+    assert 18 == Yatzy.full_house(6, 2, 2, 2, 6)
+    assert 0 == Yatzy.full_house(2, 3, 4, 5, 6)
