@@ -6,14 +6,14 @@ class Yatzy:
     @staticmethod
     def chance(*dices):
         total = 0
-        for dice in dices:
-            total += dice
+        for die in dices:
+            total += die
         return total
 
     @staticmethod
-    def yatzy(dice):
-        for die in dice:
-            value = dice[0]
+    def yatzy(dices):
+        for die in dices:
+            value = dices[0]
             value -= die
             if value != 0:
                 return 0
@@ -23,60 +23,60 @@ class Yatzy:
     def ones(*dices):
         total = 0
         ONE = 1
-        for dice in dices:
-            if dice == ONE:
-                total += dice
+        for die in dices:
+            if die == ONE:
+                total += die
         return total
 
     @staticmethod
     def twos(*dices):
         total = 0
         TWO = 2
-        for dice in dices:
-            if dice == TWO:
-                total += dice
+        for die in dices:
+            if die == TWO:
+                total += die
         return total
 
     @staticmethod
     def threes(*dices):
         total = 0
         THREE = 3
-        for dice in dices:
-            if dice == THREE:
-                total += dice
+        for die in dices:
+            if die == THREE:
+                total += die
         return total
 
     def fours(*dices):
         total = 0
         FOUR = 4
-        for dice in dices:
-            if dice == FOUR:
-                total += dice
+        for die in dices:
+            if die == FOUR:
+                total += die
         return total
 
     def fives(*dices):
         total = 0
         FIVE = 5
-        for dice in dices:
-            if dice == FIVE:
-                total += dice
+        for die in dices:
+            if die == FIVE:
+                total += die
         return total
 
     def sixes(*dices):
         total = 0
         SIX = 6
-        for dice in dices:
-            if dice == SIX:
-                total += dice
+        for die in dices:
+            if die == SIX:
+                total += die
         return total
 
     @staticmethod
     def score_pair(*dices):
         lista = []
-        for dice in dices:
-            if dices.count(dice) > 1:
-                if lista.count(dice) == 0:
-                    lista.append(dice)
+        for die in dices:
+            if dices.count(die) > 1:
+                if lista.count(die) == 0:
+                    lista.append(die)
                 else:
                     continue
 
@@ -103,43 +103,32 @@ class Yatzy:
     @staticmethod
     def three_of_a_kind(*dices):
         THREE = 3
-        for num in range(6, 0, -1):
-            if dices.count(num) >= THREE:
-                return THREE * num
+        for die in range(6, 0, -1):
+            if dices.count(die) >= THREE:
+                return THREE * die
         return 0
 
     @staticmethod
     def four_of_a_kind(*dices):
         FOUR = 4
-        for num in range(6, 0, -1):
-            if dices.count(num) >= FOUR:
-                return FOUR * num
+        for die in range(6, 0, -1):
+            if dices.count(die) >= FOUR:
+                return FOUR * die
         return 0
 
     @staticmethod
-    def small_straight(*dice):
+    def small_straight(*dices):
         for die in range(1, 6):
-
-            if dice.count(die) != 1:
+            if dices.count(die) != 1:
                 return 0
-
         return 15
 
     @staticmethod
-    def large_straight(d1,  d2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-        if (tallies[1] == 1 and
-            tallies[2] == 1 and
-            tallies[3] == 1 and
-            tallies[4] == 1
-                and tallies[5] == 1):
-            return 20
-        return 0
+    def large_straight(*dices):
+        for die in range(2, 7):
+            if dices.count(die) != 1:
+                return 0
+        return 20
 
     @staticmethod
     def full_house(d1,  d2,  d3,  d4,  d5):
