@@ -21,14 +21,14 @@ def test_yatzy_scores_50():
     assert 0 == Yatzy.yatzy([6, 6, 6, 6, 3])
 
 
-def test_1s():
+def test_ones():
     assert Yatzy.ones(1, 2, 3, 4, 5) == 1
     assert 2 == Yatzy.ones(1, 2, 1, 4, 5)
     assert 0 == Yatzy.ones(6, 2, 2, 4, 5)
     assert 4 == Yatzy.ones(1, 2, 1, 1, 1)
 
 
-def test_2s():
+def test_twos():
     assert 4 == Yatzy.twos(1, 2, 3, 2, 6)
     assert 10 == Yatzy.twos(2, 2, 2, 2, 2)
 
@@ -60,8 +60,6 @@ def test_one_pair():
     assert 6 == Yatzy.score_pair(3, 4, 3, 5, 6)
     assert 10 == Yatzy.score_pair(5, 3, 3, 3, 5)
     assert 12 == Yatzy.score_pair(5, 3, 6, 6, 5)
-    assert 200 == Yatzy.score_pair(5, 3, 6, 6, 100, 100, 100)
-    assert 0 == Yatzy.score_pair(3, 4, 2, 5, 6)
 
 
 def test_two_Pair():
