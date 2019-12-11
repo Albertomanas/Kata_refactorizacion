@@ -1,5 +1,4 @@
 class Yatzy:
-
     def __init__(self, *dices):
         self.dices = list(dices)
 
@@ -46,6 +45,7 @@ class Yatzy:
                 total += die
         return total
 
+    @staticmethod
     def fours(*dices):
         total = 0
         FOUR = 4
@@ -54,6 +54,7 @@ class Yatzy:
                 total += die
         return total
 
+    @staticmethod
     def fives(*dices):
         total = 0
         FIVE = 5
@@ -62,6 +63,7 @@ class Yatzy:
                 total += die
         return total
 
+    @staticmethod
     def sixes(*dices):
         total = 0
         SIX = 6
@@ -77,9 +79,6 @@ class Yatzy:
             if dices.count(die) > 1:
                 if lista.count(die) == 0:
                     lista.append(die)
-                else:
-                    continue
-
         if lista == []:
             return 0
         else:
@@ -103,7 +102,7 @@ class Yatzy:
     @staticmethod
     def three_of_a_kind(*dices):
         THREE = 3
-        for die in range(6, 0, -1):
+        for die in range(len(dices), 0, -1):
             if dices.count(die) >= THREE:
                 return THREE * die
         return 0
@@ -111,14 +110,14 @@ class Yatzy:
     @staticmethod
     def four_of_a_kind(*dices):
         FOUR = 4
-        for die in range(6, 0, -1):
+        for die in range(len(dices), 0, -1):
             if dices.count(die) >= FOUR:
                 return FOUR * die
         return 0
 
     @staticmethod
     def small_straight(*dices):
-        for die in range(1, 6):
+        for die in range(1, len(dices)):
             if dices.count(die) != 1:
                 return 0
         return 15
