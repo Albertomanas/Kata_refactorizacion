@@ -102,7 +102,7 @@ class Yatzy:
     @staticmethod
     def three_of_a_kind(*dices):
         THREE = 3
-        for die in range(len(dices), 0, -1):
+        for die in range(len(dices) + 1, 0, -1):
             if dices.count(die) >= THREE:
                 return THREE * die
         return 0
@@ -110,21 +110,21 @@ class Yatzy:
     @staticmethod
     def four_of_a_kind(*dices):
         FOUR = 4
-        for die in range(len(dices), 0, -1):
+        for die in range(len(dices) + 1, 0, -1):
             if dices.count(die) >= FOUR:
                 return FOUR * die
         return 0
 
     @staticmethod
     def small_straight(*dices):
-        for die in range(1, len(dices)):
+        for die in range(1, len(dices) + 1):
             if dices.count(die) != 1:
                 return 0
         return 15
 
     @staticmethod
     def large_straight(*dices):
-        for die in range(2, 7):
+        for die in range(2, len(dices) + 2):
             if dices.count(die) != 1:
                 return 0
         return 20
